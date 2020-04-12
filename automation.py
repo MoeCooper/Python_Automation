@@ -11,7 +11,7 @@ get_username.send_keys('jc70240@gmail.com')
 
 get_password = chrome_browser.find_element_by_id('password')
 get_password.clear()
-get_password.send_keys('AirForceVet123!')
+get_password.send_keys('')
 
 login_button = chrome_browser.find_element_by_name('commit').click()
 
