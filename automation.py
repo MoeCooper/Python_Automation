@@ -1,26 +1,18 @@
 from selenium import webdriver
 
+
 chrome_browser = webdriver.Chrome('./chromedriver.exe')
-
 chrome_browser.maximize_window()
-chrome_browser.get('https://www.seleniumeasy.com/test/basic-first-form-demo.html')
+chrome_browser.get('https://www.github.com/login')
 
-assert 'Selenium Easy Demo' in chrome_browser.title
-show_message_button = chrome_browser.find_element_by_class_name("btn-default")
-print(show_message_button.get_attribute('innerHTML'))
+get_username = chrome_browser.find_element_by_id('login_field')
+get_username.clear()
+get_username.send_keys('jc70240@gmail.com')
 
-assert 'Show Message' in chrome_browser.page_source
+get_password = chrome_browser.find_element_by_id('password')
+get_password.clear()
+get_password.send_keys('AirForceVet123!')
 
-user_message = chrome_browser.find_element_by_id('user-message')
+login_button = chrome_browser.find_element_by_name('commit').click()
 
-user_message.clear()
-
-user_message.send_keys('I am cool!')
-
-show_message_button.click()
-
-output_message = chrome_browser.find_element_by_id('display')
-
-assert 'I am cool!' in output_message.text
-
-chrome_browser.close()
+select_new = chrome_browser.find_element_by_xpath('/html/body/div[4]/div/aside[1]/div[2]/div[1]/div/h2/a').click()
